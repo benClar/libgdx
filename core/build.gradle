@@ -1,0 +1,22 @@
+targetCompatibility = 1.8
+apply plugin: "java"
+
+test {
+    useJUnitPlatform()
+}
+sourceCompatibility = 1.8
+dependencies {
+    implementation files('C:\\Users\\Benji\\libgdx\\commons-lang3-3.9\\commons-lang3-3.9.jar')
+    // Required -- JUnit 4 framework
+    testImplementation 'junit:junit:4.13'
+    // Optional -- Robolectric environment
+    testImplementation 'androidx.test:core:1.2.0'
+    // Optional -- Mockito framework
+    testImplementation 'org.mockito:mockito-core:3.3.3'
+    implementation 'junit:junit:4.13'
+}
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+sourceSets.main.java.srcDirs = [ "src" ]
+sourceSets.test.java.srcDirs = [ "src/test/java" ]
+eclipse.project.name = appName + "-core"
